@@ -1,0 +1,30 @@
+<template>
+    <import from="./elements/select-box"></import>
+    <import from="./elements/check-box"></import>
+    <import from="./elements/filter"></import>
+
+    <select-box options.bind="terms" name="termOptions"></select-box>
+
+    <check-box name="filter" checked.bind="false"></check-box>
+
+    <filter name="search" placeholder="Search"></filter>
+
+    <select-box options.bind="pageOptions" name="pageOptions"></select-box>
+
+    <select-box options.bind="pages" name="pages"></select-box>
+
+    <table click.delegate="changeTerm()">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr repeat.for="item of term">
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+            </tr>
+        </tbody>
+    </table>
+</template>

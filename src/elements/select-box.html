@@ -1,0 +1,5 @@
+<template>
+    <select value.bind="value" change.delegate="valueChanged()" name.bind="name">
+        <option repeat.for="o of options" value.bind="o">${o}</option>
+    </select>
+</template>
